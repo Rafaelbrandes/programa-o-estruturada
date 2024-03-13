@@ -1,0 +1,12 @@
+def calcula_salario(valor_hora, num_horas, irpf=0.275):
+    """
+    This function calculates the net salary of an employee, given the hourly wage and the number of hours worked in a month.
+    It also takes an optional parameter irpf, which calculates the income tax to be deducted, with a default value of 0.275.
+    """
+    # calculate the gross salary
+    salario_bruto = valor_hora * num_horas
+
+    # calculate the income tax
+    salario_liquido = salario_bruto - (salario_bruto * irpf)
+
+    return salario_liquido

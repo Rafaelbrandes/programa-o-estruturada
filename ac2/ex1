@@ -1,0 +1,36 @@
+import cmath
+
+def eq_seg_grau(a, b, c):
+    """
+    This function receives three real values and returns the roots of a quadratic equation in the form ax^2 + bx + c = 0, assuming the roots are always real.
+    """
+    # calculate the discriminant
+    d = (b**2) - (4*a*c)
+
+    # handle special cases
+    if d < 0:
+        raise ValueError("The discriminant is negative, indicating that the roots are complex.")
+    elif d == 0:
+        # one real root
+        root = -b / (2*a)
+        return (root,)
+    else:
+        # two real roots
+        root1 = (-b - cmath.sqrt(d)) / (2*a)
+        root2 = (-b + cmath.sqrt(d)) / (2*a)
+        return (root1, root2)
+
+def bissexto(ano):
+    """
+    This function receives an integer and returns a boolean value, indicating whether the year is a leap year or not.
+    """
+    if ano % 4 == 0:
+        if ano % 100 == 0:
+            if ano % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
