@@ -1,0 +1,31 @@
+def soma(x, y):
+    return x + y
+def subtracao(x, y):
+    return x - y
+def multiplicacao(x, y):
+    return x * y
+def divisao(x, y):
+    if y == 0:
+        raise ValueError("Divisão por zero")
+    return x / y
+def calculadora_cli():
+    try:
+        x = float(input("Informe um número: "))
+        y = float(input("Informe outro número: "))
+        operacao = input("Informe a operação: ").lower()
+        
+        if operacao == "soma":
+            resultado = soma(x, y)
+        elif operacao == "subtração":
+            resultado = subtracao(x, y)
+        elif operacao == "multiplicação":
+            resultado = multiplicacao(x, y)
+        elif operacao == "divisão":
+            resultado = divisao(x, y)
+        else:
+            print("operação inválida")
+            return
+        
+        print(f"Resultado: {resultado}")
+    except ValueError as e:
+        print(e)

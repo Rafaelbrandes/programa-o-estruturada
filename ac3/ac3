@@ -1,0 +1,15 @@
+def determina_tipo_triangulo(a, b, c):
+    # Verifica se os lados formam um triângulo
+    if a + b <= c or a + c <= b or b + c <= a:
+        return "Não é um triângulo"
+    
+    # Verifica se o triângulo é equilátero
+    if a == b == c:
+        return "Equilátero"
+    
+    # Verifica se o triângulo é isósceles
+    if a == b or a == c or b == c:
+        return "Isósceles"
+    
+    # Se nenhuma das condições acima for verdadeira, o triângulo é escaleno
+    return "Escaleno"
